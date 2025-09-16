@@ -1,5 +1,3 @@
-# Assignment completed: 17 April 2025 (Local Stroage)
-
 # Secure Data Encryption System
 
 A Streamlit-based web application for securely storing and retrieving sensitive data using encryption and hashed passwords. This project is designed for users who want to keep their confidential information safe with strong cryptography and user authentication.
