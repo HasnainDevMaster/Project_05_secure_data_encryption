@@ -1,92 +1,136 @@
-# Secure Data Encryption System
+# 🔐 Secure Data Encryption System  
 
-A Streamlit-based web application for securely storing and retrieving sensitive data using encryption and hashed passwords. This project is designed for users who want to keep their confidential information safe with strong cryptography and user authentication.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Framework-Streamlit-FF4B4B?logo=streamlit)
+![Encryption](https://img.shields.io/badge/Security-Cryptography-green?logo=databricks)
 
-## Live Demo
+A **Streamlit-based web application** for securely storing and retrieving sensitive data using **modern encryption** and **hashed authentication** 🔒.  
+Designed for users who value **confidentiality**, **data integrity**, and **simplicity** in managing secure information.
 
-Access the deployed app here:  
-**[https://hasnaindevmaster-project-05-secure-data-encryption-main-755hbl.streamlit.app/](https://hasnaindevmaster-project-05-secure-data-encryption-main-755hbl.streamlit.app/)**
+---
 
-## Features
+## 🌐 Live Demo  
+🚀 **Access the deployed app here:**  
+👉 [Open Secure Data Encryption System](https://hasnaindevmaster-project-05-secure-data-encryption-main-755hbl.streamlit.app/)
 
-- **User Registration & Login:** Register new users and authenticate with hashed passwords.
-- **Data Encryption:** Store sensitive data encrypted with a user-provided passkey.
-- **Data Retrieval:** Retrieve and decrypt your data using the correct passkey.
-- **Persistent Storage:** All user data is stored securely in a JSON file.
-- **Security Measures:**
-  - Passwords and passkeys are hashed using PBKDF2-HMAC-SHA256 with a salt.
-  - Data is encrypted using Fernet symmetric encryption.
-  - Limited login and decryption attempts with lockout to prevent brute-force attacks.
+---
 
-## Project Structure
+## ✨ Features & Highlights  
+
+- 👤 **User Registration & Login** — Create accounts and log in with **securely hashed passwords**.  
+- 🔒 **Data Encryption** — Encrypt sensitive text using a **user-defined passkey**.  
+- 🔓 **Data Retrieval** — Decrypt and view your data safely using the **correct passkey**.  
+- 💾 **Persistent Storage** — All encrypted data is stored securely in a local **JSON file**.  
+- 🛡 **Security Layers:**  
+  - Passwords & passkeys hashed via **PBKDF2-HMAC-SHA256 with salt** 🧂  
+  - Data encrypted using **Fernet symmetric encryption** 🔐  
+  - **Login attempt limits** + **temporary lockouts** ⏳ to prevent brute-force attacks  
+
+---
+
+## 📁 Project Structure  
 
 ```
-.gitattributes
-main.py
-requirements.txt
-secure_data.json
-```
 
-- `main.py`: Main Streamlit application.
-- `requirements.txt`: Python dependencies.
-- `secure_data.json`: Encrypted user data (auto-generated).
-- `.gitattributes`: Git configuration.
+Project_05_secure_data_encryption/
+│
+├── main.py              # 🎯 Main Streamlit application
+├── requirements.txt     # 📦 Python dependencies
+├── secure_data.json     # 🔐 Encrypted user data (auto-generated)
+└── .gitattributes       # ⚙️ Git configuration
 
-## Installation
+````
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/HasnainDevMaster/Project_03_personal_library_manager
+---
+
+## ⚙️ Installation  
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/HasnainDevMaster/Project_05_secure_data_encryption
    cd Project_05_secure_data_encryption
    ```
 
-2. **Install dependencies:**
-   ```sh
+2. **Install dependencies**
+
+   ```bash
    pip install -r requirements.txt
    ```
 
-## Usage
+---
 
-1. **Run the application:**
-   ```sh
-   streamlit run main.py
-   ```
+## 🚀 Usage Guide
 
-2. **Open the app in your browser** (Streamlit will provide a local URL).
+### 🧾 Register a New User
 
-3. **Register a new user:**
-   - Go to the "Register" page in the sidebar.
-   - Enter a username and password.
+* Open the app and go to **“Register”** in the sidebar
+* Enter a **username** and **password**
+* Your credentials are hashed and saved securely
 
-4. **Login:**
-   - Go to the "Login" page.
-   - Enter your credentials.
+### 🔑 Login
 
-5. **Store Data:**
-   - After logging in, go to "Store Data".
-   - Enter the data you want to encrypt and a passkey (used for encryption).
-   - Click "Encrypt and Store".
+* Head to the **“Login”** page
+* Enter your username and password to access the dashboard
 
-6. **Retrieve Data:**
-   - Go to "Retrieve Data".
-   - Select the entry number and enter the correct passkey to decrypt.
+### 💬 Store Encrypted Data
 
-## Security Notes
+* After login, open **“Store Data”**
+* Type in your message and a **passkey**
+* Click **“Encrypt and Store”** — your entry is saved encrypted 🔐
 
-- **Passwords and passkeys are never stored in plain text.**
-- **Each user's data is encrypted with their chosen passkey.**
-- **After 3 failed login or decryption attempts, the user is locked out for 60 seconds.**
-- **Do not lose your passkey; encrypted data cannot be recovered without it.**
+### 📂 Retrieve Encrypted Data
 
-## Dependencies
+* Go to **“Retrieve Data”**
+* Select an entry and enter the **correct passkey**
+* View your decrypted message instantly ✨
 
-See [requirements.txt](requirements.txt):
+---
 
-- `streamlit`
-- `cryptography`
+## 🧠 Security Notes
 
-## File Descriptions
+* ⚠️ **Passwords & passkeys are never stored in plain text**
+* 🔑 Each user’s data is encrypted using their **unique passkey**
+* ⏳ **3 failed attempts** → temporary **lockout for 60 seconds**
+* ❌ Lost passkey? Data **cannot be recovered** (by design)
+* 🧩 Uses industry-standard **`cryptography.Fernet`** for robust security
 
-- [`main.py`](main.py): Main application logic, including user authentication, encryption, and UI.
-- [`secure_data.json`](secure_data.json): Stores user credentials (hashed) and encrypted data.
-- [`requirements.txt`](requirements.txt): Lists required Python packages.
+---
+
+## 🧩 Dependencies
+
+📦 Listed in [`requirements.txt`](requirements.txt):
+
+* 🖥️ **Streamlit** → For the interactive web interface
+* 🔏 **Cryptography** → For encryption, hashing, and key management
+
+Install all:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🗂️ File Descriptions
+
+| File               | Description                                                                     |
+| ------------------ | ------------------------------------------------------------------------------- |
+| `main.py`          | Main application containing encryption logic, authentication, and Streamlit UI. |
+| `secure_data.json` | Stores encrypted user data and hashed credentials.                              |
+| `requirements.txt` | Python dependencies required for setup.                                         |
+| `.gitattributes`   | Git settings and config.                                                        |
+
+---
+
+## 🏆 Summary
+
+This **Secure Data Encryption System** combines **Streamlit’s simplicity** with **powerful cryptography** to create a **secure, interactive data vault** 🔐.
+It’s a perfect educational or real-world demonstration of how **authentication**, **encryption**, and **session control** can work seamlessly in Python 🚀.
+
+> 💡 *Ideal for learning, personal data protection, and showcasing secure app design.*
+
+---
+
+**👨‍💻 Developed by [Syed Hasnain Ali Shah](https://github.com/HasnainDevMaster)**
+🌟 *Making security simple, strong, and accessible for everyone.*
+
